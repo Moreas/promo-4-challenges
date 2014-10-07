@@ -22,12 +22,7 @@ def coach_answer_enhanced(your_message)
     answer += "I can feel your motivation! "
   end
 
-  if (your_message.split('').last == "?")
-   answer += "Silly question, get dressed and go to work!"
-  else
-    answer += "I don't care, get dressed and go to work!"
-  end
-
+answer += coach_answer(your_message)
 return answer
 
 end
