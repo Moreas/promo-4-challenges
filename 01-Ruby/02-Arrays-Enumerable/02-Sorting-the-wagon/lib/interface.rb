@@ -17,6 +17,7 @@ while !(answer == "")
 end
 
 puts "Congratulations! Your wagon has #{list.size} students:"
+print "- "
 list = wagon_sort(list)
 
 for i in (0..list.size - 1)
