@@ -40,6 +40,4 @@ def play_game
     end
   end
   puts end_game_message(player_score, bank_score)
-
-
 end
