@@ -1,5 +1,5 @@
 FOODLIST = [{"Name"  => "Cheese Burger","Calorie" => 290},{"Name"  => "Big Mac","Calorie" => 300},{"Name"  => "Mc Bacon","Calorie" => 400},{"Name"  => "Royal Cheese","Calorie" => 130},{"Name"  => "French fries","Calorie" => 130},{"Name"  => "Potatoes","Calorie" => 130},{"Name"  => "Coca","Calorie" => 160},{"Name"  => "Sprite","Calorie" => 170}]
-
+# A AMELIORER: NE PAS UTILISER UN TABLEAU DE HASH MAIS EULEMENT UNE HASH DE TYPE KEY="CHEESE BURGER" VALEUR="290"
 def extra_poor_calories_counter (food)
   total_calories = 0
   FOODLIST.each do |choice|
