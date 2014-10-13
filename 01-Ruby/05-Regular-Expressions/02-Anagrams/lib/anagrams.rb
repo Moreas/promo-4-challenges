@@ -18,9 +18,7 @@ def anagrams_on_steroids?(a_string, another_string)
   a_string  = a_string.gsub(/\W/,"")
   another_string = another_string.gsub(/\W/,"")
   anagram = false
-
   i = 0
-
   w1 = Hash.new(0)
   w2 = Hash.new(0)
   if a_string.size == another_string.size
@@ -37,15 +35,3 @@ def anagrams_on_steroids?(a_string, another_string)
   p fin - debut
   return anagram
 end
-
-p "1ere methode"
-p anagrams?("Monica Lewinsky!", "Nice silky woman")
-
-p "2eme methode"
-p anagrams_on_steroids?("Monica Lewinsky!", "Nice silky woman")
-  # TODO: implement the obvious method to test if two words are anagrams
-
-def anagrams_on_steroids?(a_string, another_string)
-  # TODO: implement the improved method
-end
->>>>>>> fca60cd46159bd8a7de660d46cbce82b2fc4b807
