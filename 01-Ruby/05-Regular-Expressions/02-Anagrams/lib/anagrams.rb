@@ -1,16 +1,20 @@
 def anagrams?(a_string, another_string)
   #TODO: implement the obvious method to test if two words are anagrams
+  debut = Time.now
    a_string  = a_string.gsub(/\W/,"")
    another_string = another_string.gsub(/\W/,"")
   anagram = false
   if a_string.upcase.split("").sort.join == another_string.upcase.split("").sort.join
     anagram = true
   end
+  fin = Time.now
+  p fin - debut
   return anagram
 end
 
 def anagrams_on_steroids?(a_string, another_string)
   #TODO: implement the improved method
+  debut = Time.now
   a_string  = a_string.gsub(/\W/,"")
   another_string = another_string.gsub(/\W/,"")
   anagram = false
@@ -27,5 +31,13 @@ def anagrams_on_steroids?(a_string, another_string)
       anagram = true
     end
   end
+  fin = Time.now
+  p fin - debut
   return anagram
 end
+
+p "1ere methode"
+p anagrams?("Monica Lewinsky!", "Nice silky woman")
+
+p "2eme methode"
+p anagrams_on_steroids?("Monica Lewinsky!", "Nice silky woman")
