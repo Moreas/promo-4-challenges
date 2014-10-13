@@ -41,3 +41,9 @@ p anagrams?("Monica Lewinsky!", "Nice silky woman")
 
 p "2eme methode"
 p anagrams_on_steroids?("Monica Lewinsky!", "Nice silky woman")
+  # TODO: implement the obvious method to test if two words are anagrams
+
+def anagrams_on_steroids?(a_string, another_string)
+  # TODO: implement the improved method
+end
+>>>>>>> fca60cd46159bd8a7de660d46cbce82b2fc4b807

@@ -1,6 +1,7 @@
 # Encoding: utf-8
 
 def mail_joke(email)
+<<<<<<< HEAD
   # TODO: Return a joke suited to the email provided
 
   if email =~ /^(\S+)@(\S+)$/
@@ -18,4 +19,7 @@ def mail_joke(email)
   else
     raise ArgumentError
   end
+=======
+  # TODO: Return (not print!) a joke suited to the email provided
+>>>>>>> fca60cd46159bd8a7de660d46cbce82b2fc4b807
 end
