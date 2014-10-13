@@ -28,7 +28,7 @@ def anagrams_on_steroids?(a_string, another_string)
       i = i + 1
     end
     if w1.eql?(w2)
-     anagram = true
+      anagram = true
     end
   end
   fin = Time.now
