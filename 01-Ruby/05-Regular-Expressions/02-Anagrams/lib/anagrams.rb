@@ -18,7 +18,9 @@ def anagrams_on_steroids?(a_string, another_string)
   a_string  = a_string.gsub(/\W/,"")
   another_string = another_string.gsub(/\W/,"")
   anagram = false
+
   i = 0
+
   w1 = Hash.new(0)
   w2 = Hash.new(0)
   if a_string.size == another_string.size
