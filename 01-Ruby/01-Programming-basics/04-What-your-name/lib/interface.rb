@@ -15,7 +15,7 @@ mname = gets.chomp
 puts "What's your last name?"
 lname = gets.chomp
 
-puts "Hello #{compute_name(fname,mname,lname)}"
+puts "Hello #{compute_name(fname, mname, lname)}"
 
 
 

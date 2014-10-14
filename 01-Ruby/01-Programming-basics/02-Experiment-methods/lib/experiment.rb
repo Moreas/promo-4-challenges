@@ -5,7 +5,7 @@
 def get_rid_of_surrounding_whitespaces(a_string)
   # TODO: return a copy of the string with leading and trailing whitespaces removed
   # example: get_rid_of_surrounding_whitespaces("  hey yo  ") => "hey yo"
-  return a_string.strip()
+  return a_string.strip
 end
 
 def belongs_to?(a_string, a_word)
@@ -17,7 +17,7 @@ end
 def replace(initial_string, old_letter, new_letter)
   # TODO: return a copy of the string with the new letter replacing the old one
   # example: replace("casanova", "a", "o") => "cosonovo"
-  return initial_string.gsub(old_letter,new_letter)
+  return initial_string.gsub(old_letter, new_letter)
 end
 
 def exactly_divide(an_integer, a_divider)
