@@ -10,7 +10,7 @@ class Transaction
 
   def to_s
     # Nicely print transaction infos using Time#strftime.
-    return "#{@amount.to_s}USD #{@date.strftime("on %m/%d/%Y")}"
+    return "#{@amount}USD #{@date.strftime("on %m/%d/%Y")}"
   end
 end
 
