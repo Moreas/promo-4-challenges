@@ -1,7 +1,6 @@
 class OrangeTree
   # TODO: Implement all the specs defined in the README.md :)
-  attr_accessor :fruits
-  attr_reader :age, :height, :dead
+  attr_reader :age, :height, :dead, :fruits
 
   def initialize
     @age = 0
