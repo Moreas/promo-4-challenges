@@ -23,13 +23,13 @@ def quizz
 
   # TODO: replace "?" by the correct fixnum !
 
-  answers << (b.gears == "?")
-  answers << (b.wheels == "?")
-  answers << (b.seats == "?")
+  answers << (b.gears == 1)
+  answers << (b.wheels == 2)
+  answers << (b.seats == 1)
 
-  answers << (t.gears == "?")
-  answers << (t.wheels == "?")
-  answers << (t.seats == "?")
+  answers << (t.gears == 4)
+  answers << (t.wheels == 2)
+  answers << (t.seats == 2)
 
   answers.reduce(true) do |result, answer|
     result && answer

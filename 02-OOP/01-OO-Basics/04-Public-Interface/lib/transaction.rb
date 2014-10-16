@@ -1,5 +1,4 @@
 require 'time'
-
 # Optional
 class Transaction
   def initialize(amount)
@@ -13,6 +12,5 @@ class Transaction
     return "#{@amount}USD #{@date.strftime("on %m/%d/%Y")}"
   end
 end
-
 mytransaction = Transaction.new(2000)
 p mytransaction.to_s
