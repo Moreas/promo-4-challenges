@@ -5,12 +5,12 @@ require_relative "recipe"
 
 class Cookbook
   attr_reader :recipes
-  def initialize (csv_file)
+  def initialize(csv_file)
     @file = csv_file
     @recipes = []
     csv_options = { col_sep: ',', encoding: "utf-8" }
     CSV.foreach(csv_file, csv_options) do |row|
-      recipe = Recipe.new(row[0],row[1])
+      recipe = Recipe.new(row[0], row[1])
       @recipes << recipe
     end
   end
@@ -18,8 +18,8 @@ class Cookbook
   def add_recipe(recipe, csv_file)
     @recipes << recipe
     CSV.open(csv_file, "wb") do |row|
-      @recipes.each do |recipe|
-        row << [recipe.name,recipe.description]
+      @recipes.each do |i|
+        row << [i.name, i.description]
       end
     end
   end

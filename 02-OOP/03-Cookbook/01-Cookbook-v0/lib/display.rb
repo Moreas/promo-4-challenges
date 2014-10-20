@@ -9,10 +9,10 @@ class Display
   end
 
   def add_recipes(cookbook)
-    puts ("Entrez le nom de la recette")
+    puts "Entrez le nom de la recette"
     name = gets.chomp
-    puts ("Entrez la description de la recette")
+    puts "Entrez la description de la recette"
     description = gets.chomp
-    return recipe = Recipe.new(name, description)
+    return Recipe.new(name, description)
   end
 end

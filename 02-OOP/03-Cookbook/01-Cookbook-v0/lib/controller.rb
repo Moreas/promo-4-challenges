@@ -13,10 +13,9 @@ class Controller
   end
 
   def create
-    @cookbook.add_recipe(@display.add_recipes(@cookbook),"recipe.csv")
+    @cookbook.add_recipe(@display.add_recipes(@cookbook), "recipe.csv")
   end
 
   def destroy
-
   end
 end
