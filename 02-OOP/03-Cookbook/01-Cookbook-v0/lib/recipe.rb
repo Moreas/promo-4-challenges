@@ -6,8 +6,5 @@ class Recipe
   end
 
   def pick_recipe(name)
-    if name == @name
-      return self
-    end
   end
 end
