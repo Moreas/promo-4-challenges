@@ -15,18 +15,21 @@ class Cookbook
     end
   end
 
-  def add_recipe(recipe, csv_file)
+  def add_recipe(recipe)
     @recipes << recipe
-    CSV.open(csv_file, "wb") do |row|
+    CSV.open(@file, "wb") do |row|
       @recipes.each do |i|
         row << [i.name, i.description]
       end
     end
   end
 
-  def remove_recipe(recipe_name)
-    @recipes.each do |recipe|
-      recipe.pick_recipe(name)
+  def remove_recipe(index)
+    @recipes.delete_at(index)
+    CSV.open(@file, "wb") do |row|
+      @recipes.each do |i|
+        row << [i.name, i.description]
+      end
     end
   end
 

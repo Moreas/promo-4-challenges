@@ -4,7 +4,4 @@ class Recipe
     @name = name
     @description = description
   end
-
-  def pick_recipe(name)
-  end
 end
