@@ -1,0 +1,31 @@
+###CONTROLLERS
+
+#RESTAURANT_C => DONE
++create_restaurant
+
+#EMPLOYEE_C => DONE
++assign_order_to_delivery_guy
++add_employee
+
+
+#ORDER_C
+
+###VIEWS
+
+#RESTAURANT_V
+
+#MEAL_V
+
+#EMPLOYEE_V
+
+#CUSTOMER_V
+
+#ORDER_V
+
+###OTHERS
+
+#ROUTER
+#CUSTOMERS_DB
+#EMPLOYEES_DB
+#MEAL_DB
+#ORDER_DB

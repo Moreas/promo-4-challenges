@@ -1,0 +1,55 @@
+#######ITEMS#######
+restaurant
+employee
+manager < employee
+delivery guys < employee
+customer
+order
+meal
+
+######CLASSES######
+
+###MODELS
+
+#RESTAURANT
+:name
+:city
+:address
+:phone_number
+:opening_hour
+:closing_hour
+:nb_employees
+:nb_customers
+:menu
++is_open?
+
+#MEAL
+:name
+:price
+:description
+
+#EMPLOYEE
+:username
+:password
+
+#MANAGER < EMPLOYEE
+
+#DELIVERY_GUY < EMPLOYEE
+:assigned_orders
++mark_order_as_complete
+
+#CUSTOMER
+:name
+:address
+
+#ORDER
+:id
+:meals
+:customer
+:total_price
+:date
+:time
+:delivery_guy
+:completed?
++set_delivery_guy
+
