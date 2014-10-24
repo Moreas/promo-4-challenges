@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 require_relative 'customer'
 require_relative 'deliveryguy'
 require_relative 'employee'
@@ -38,3 +39,8 @@ start = Router.new(restaurant_controller, employee_controller, order_controller,
 start.run
 
 
+=======
+# TODO: require relevant files to bootstrap the app.
+# Then you can test your program with:
+#    $ ruby app.rb
+>>>>>>> c457031c26688bdbbf65abe3dcc4c94aac6db830
