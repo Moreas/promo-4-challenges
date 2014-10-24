@@ -37,22 +37,22 @@
     <type label="SET" length="1" sql="SET" quote=""/>
     <type label="Bit" length="0" sql="bit" quote=""/>
   </group>
-</datatypes><table x="799" y="150" name="Album">
-<row name="AlbumId" null="1" autoincrement="1">
+</datatypes><table x="799" y="150" name="albums">
+<row name="albumsId" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="Title" null="1" autoincrement="0">
 <datatype>VARCHAR(160)</datatype>
 <default>NULL</default></row>
-<row name="ArtistId" null="1" autoincrement="0">
+<row name="artist_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Artists" row="ArtistId" />
+<default>NULL</default><relation table="artists" row="ArtistId" />
 </row>
 <key type="PRIMARY" name="">
-<part>AlbumId</part>
+<part>albumsId</part>
 </key>
 </table>
-<table x="976" y="261" name="Artists">
+<table x="976" y="261" name="artists">
 <row name="ArtistId" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -63,46 +63,46 @@
 <part>ArtistId</part>
 </key>
 </table>
-<table x="817" y="490" name="Genre">
-<row name="GenreId" null="1" autoincrement="1">
+<table x="817" y="490" name="genres">
+<row name="genresId" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="Name" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
-<part>GenreId</part>
+<part>genresId</part>
 </key>
 </table>
-<table x="108" y="56" name="MediaType">
-<row name="MediaTypeId" null="1" autoincrement="1">
+<table x="108" y="56" name="media_types">
+<row name="media_typesId" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="Name" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
-<part>MediaTypeId</part>
+<part>media_typesId</part>
 </key>
 </table>
-<table x="476" y="234" name="Track">
+<table x="476" y="234" name="tracks">
 <row name="TrackId" null="0" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="Name" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="AlbumId" null="1" autoincrement="0">
+<row name="album_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Album" row="AlbumId" />
+<default>NULL</default><relation table="albums" row="albumsId" />
 </row>
-<row name="MediaTypeId" null="1" autoincrement="0">
+<row name="media_type_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="MediaType" row="MediaTypeId" />
+<default>NULL</default><relation table="media_types" row="media_typesId" />
 </row>
-<row name="GenreId" null="1" autoincrement="0">
+<row name="genre_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Genre" row="GenreId" />
+<default>NULL</default><relation table="genres" row="genresId" />
 </row>
 <row name="Composer" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
