@@ -3,27 +3,49 @@ class PostsController
     @view = PostView.new
   end
 
-  ################################################################
-  # BEWARE: you MUST not use the global variable DB in this file #
-  ################################################################
-
   def index
-    # TODO: implement listing all posts
+    posts = Post.all
+    @view.print_posts(posts)
   end
 
   def create
-    # TODO: implement creating a new post
+    title = @view.ask_for_title
+    url = @view.ask_for_url
+    post = Post.new(title: title, url: url)
+    post.save
+    @view.print_successfully_created(post)
   end
 
   def update
-    # TODO: implement updating an existing post
+    post = find_post
+    return unless post
+    post.title = @view.ask_for_title
+    post.url = @view.ask_for_url
+    post.save
+    @view.print_successfully_updated(post)
   end
 
   def destroy
-    # TODO: implement destroying a post
+    post = find_post
+    return unless post
+    post.destroy
+    @view.print_successfully_destroyed(post)
   end
 
   def upvote
-    # TODO: implement upvoting a post
+    post = find_post
+    return unless post
+    post.upvote
+    post.save
+    @view.print_successfully_upvoted(post)
+  end
+
+  private
+
+  def find_post
+    id = @view.ask_for_id
+    post = Post.find(id)
+    @view.print_post_not_found(id) unless post
+    post
   end
 end

@@ -1,28 +1,31 @@
 # You can use a global variable, DB, built as is:
-# FILE = '/home/florent/code/Moreas/promo-4-challenges/03-AR-Database/02-SQL-CRUD/db/posts.db'
 # DB = SQLite3::Database.new(file)
 
-require 'time'
-
 class Post
-  # TODO: implement some reader and/or writers
-  attr_reader :id, :date, :title, :date, :votes, :url
+  attr_reader :id, :date, :votes
+  attr_accessor :title, :url
 
   def initialize(options = {})
-    # TODO: initialize instance variables from the hash options.
     @title = options[:title]
     @url = options[:url]
+    @date = options[:date] || Time.now
+    @votes = options[:votes] || 0
     @id = options[:id]
-    @date = Time.now
-    @votes = 0
   end
 
-  def title=(title)
-    @title = title
+  def self.all
+    rows = DB.execute('SELECT * FROM posts')
+    rows.map do |row|
+      load_from_row(row)
+    end
   end
 
-  def url=  (url)
-    @url = url
+  def self.find(id)
+    statement = DB.prepare('SELECT * FROM posts WHERE id = ?')
+    statement.bind_param 1, id
+    row = statement.execute.first
+    statement.close
+    load_from_row(row) if row
   end
 
   def upvote
@@ -30,33 +33,48 @@ class Post
   end
 
   def save
-    exists = DB.execute "SELECT id FROM posts WHERE id = '#{@id}'"
-    if exists.first != nil
-      @title = "#{@title} updated"
-    end
-    DB.execute "INSERT INTO posts (title, url, date, votes) VALUES ('#{@title}', '#{@url}', '#{@date}', #{@votes})"
+    @id ? update : insert
+  end
+
+  def destroy
+    statement = DB.prepare('DELETE FROM posts WHERE id = ?')
+    statement.bind_param 1, @id
+    statement.execute
+  end
+
+  private
+
+  def self.load_from_row(row)
+    options = {
+      id: row[0],
+      title: row[1],
+      url: row[2],
+      date: Time.at(row[3]),
+      votes: row[4]
+    }
+    Post.new(options)
+  end
+
+  def update
+    statement = DB.prepare(
+      'UPDATE posts SET title = ?, url = ?, date = ?, votes = ? WHERE id = ?')
+    bind_params(statement)
+    statement.bind_param 5, @id if @id
+    statement.execute
+  end
+
+  def insert
+    statement = DB.prepare(
+      'INSERT INTO posts (title, url, date, votes) VALUES (?, ?, ?, ?)')
+    bind_params(statement)
+    statement.execute
     @id = DB.last_insert_row_id
   end
 
-  def self.find(id)
-    result = DB.execute "SELECT id, title, url, date, votes FROM posts WHERE id=#{id}"
-    return Post.new({id: result.flatten[0], title: result.flatten[1], url: result.flatten[2], date: result.flatten[3], votes: result.flatten[4]})
+  def bind_params(statement)
+    statement.bind_param 1, @title
+    statement.bind_param 2, @url
+    statement.bind_param 3, @date.to_i
+    statement.bind_param 4, @votes
   end
-
-  def self.all
-    results = DB.execute("SELECT * FROM posts;")
-
-    results.map do |result|
-      Post.new({id: result.flatten[0], title: result.flatten[1], url: result.flatten[2], date: result.flatten[3], votes: result.flatten[4]})
-    end
-  end
-
-  # TODO: implement all the class methods and instance methods
-  #       to have a full CRUD support on your Post model
 end
-
-  # `id`  INTEGER PRIMARY KEY AUTOINCREMENT,
-  # `title` TEXT,
-  # `url` TEXT,
-  # `date`  INTEGER,
-  # `votes`  INTEGER
