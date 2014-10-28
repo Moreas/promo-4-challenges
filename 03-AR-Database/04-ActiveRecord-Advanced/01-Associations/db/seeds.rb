@@ -1,4 +1,4 @@
-# TODO: Write a seed
+  # TODO: Write a seed
 require "faker"
 
 5.times do

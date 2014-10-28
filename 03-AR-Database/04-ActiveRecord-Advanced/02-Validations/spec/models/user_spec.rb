@@ -42,6 +42,7 @@ describe "User" do
     end
     user = User.new(username: "bob", email: "   bob@leponge.me   ")
     expect(user.valid?).to eq true
+    expect(user.email).to eq "bob@leponge.me"
   end
 
 end

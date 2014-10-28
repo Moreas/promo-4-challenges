@@ -4,5 +4,5 @@ class Post < ActiveRecord::Base
   validates :user, :name, :url, presence: true
   validates :name, uniqueness: { case_sensitive: false }
   validates :name, length: { minimum: 5 }
-  validates :url, format: { with: /\A.*\..*\z/ }
+  validates :url, format: { with: /\A.*\..*\z/, message: "invalid url" }
 end
