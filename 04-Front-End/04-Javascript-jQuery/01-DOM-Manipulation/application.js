@@ -40,16 +40,13 @@ function run_challenges() {
 
 
   // Ex 8. Change the background color of all table header cells to #DDF4FF
-
-
-
-
+  $('th').css({"background-color":"#DDF4FF"});
 
   // Ex 9. Translate the #results list 20px downward (animation would be great ^_^)
-
-
+  $('#results').css({"top":"20px"});
 
   // Ex 10. Remove the "Email:" label from the DOM
+  $('label').remove();
 
 
 
