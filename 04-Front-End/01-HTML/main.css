@@ -1,0 +1,9 @@
+.container {
+  margin: 0 auto;
+  width: 80%;
+	font-family: 'Verdana', sans-serif;
+}
+
+.navbar {
+  background: black;
+}

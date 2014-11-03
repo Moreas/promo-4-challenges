@@ -1,0 +1,78 @@
+.body {
+  background-image: url("images/grid.jpg");
+}
+
+
+.banner {
+  background-image: url('images/background.jpg');
+  padding-top: 150px;
+  padding-bottom: 270px;
+  background-size: cover;
+  text-align: center;
+  color: white;
+}
+
+.banner h1 {
+  font-size: 72px;
+  text-shadow: 0 0 20px rgba(0, 0, 0, .8);
+}
+
+.banner h2 {
+  display: inline-block;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, .6);
+  padding: 5px;
+}
+
+.banner p {
+  margin-top: 15px;
+}
+
+
+.text-center {
+  text-align: center;
+}
+
+.text-center h1 {
+  font-size: 25px;
+}
+
+.black-transparent {
+  background-color: rgba(0, 0, 0, .8);
+}
+
+.navbar-default .navbar-brand {
+  color:white;
+}
+
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: white;
+}
+
+.illustration {
+  padding-top: 110px;
+  padding-bottom: 40px;
+  display:block;
+}
+
+.col-xs-3 p {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.email {
+ margin-right: 5px;
+}
+
+.btn-turquoise {
+  padding: 3px 10px;
+  background-color: #16A085;
+  color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.vertical-spacer {
+ height:20px;
+}
+

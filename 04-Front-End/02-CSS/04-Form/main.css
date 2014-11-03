@@ -1,6 +1,15 @@
 .container {
-  margin: 0 auto;  
+  margin: 0 auto;
   width: 840px;
+  border-width: 1px;
+  border-style: dotted;
+  border-color: black
 }
-
-/*Add some CSS rules to design your form */ 
+.label {
+  width: 100px;
+  border-width: 1px;
+  border-style: dotted;
+  border-color: black;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+}
