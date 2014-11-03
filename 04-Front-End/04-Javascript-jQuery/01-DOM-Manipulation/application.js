@@ -23,6 +23,9 @@ function run_challenges() {
 
 
   // Ex 4. Add the .blue CSS class to the table header cells (th elements)
+  $('th').addClass('blue');
+
+
 
 
 
