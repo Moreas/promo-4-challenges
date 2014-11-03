@@ -8,15 +8,18 @@
 function run_challenges() {
 
   // Ex 1. Read the content of the email input
-  var email = null;  // TODO: replace null, keep the email variable.
+  var email = $('#email').attr('value');  // TODO: replace null, keep the email variable.
+
+
 
 
   // Ex 2. Fill the content of the email input with your email
-
+  $('#email').val("florent.pignaud@gmail.com");
 
 
   // Ex 3. Replace the email hint (next to the input) with 'This is my email now'
   //       The text should be emphasized using a <strong> tag
+//  $('#email-hint').text("This is my email!");
 
 
   // Ex 4. Add the .blue CSS class to the table header cells (th elements)
